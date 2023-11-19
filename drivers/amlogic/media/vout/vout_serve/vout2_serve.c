@@ -1197,7 +1197,7 @@ static void vout2_init_mode_parse(char *str)
 	VOUTPR("vout2: %s\n", vout2_mode_uboot);
 }
 
-static int get_vout2_init_mode(char *str)
+static __attribute__((unused)) int get_vout2_init_mode(char *str)
 {
 	char *ptr = str;
 	char sep[2];

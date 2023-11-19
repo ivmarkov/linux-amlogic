@@ -6905,7 +6905,7 @@ static void hdmitx_fmt_attr(struct hdmitx_dev *hdev)
 	pr_info(SYS "fmt_attr %s\n", hdev->fmt_attr);
 }
 
-static void hdmitx_init_fmt_attr(struct hdmitx_dev *hdev)
+static __attribute__((unused)) void hdmitx_init_fmt_attr(struct hdmitx_dev *hdev)
 {
 	if (strlen(hdev->fmt_attr) >= 8) {
 		pr_info(SYS "fmt_attr %s\n", hdev->fmt_attr);

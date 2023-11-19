@@ -6306,7 +6306,7 @@ void hdmitx21_fmt_attr(struct hdmitx_dev *hdev)
 	pr_info("fmt_attr %s\n", hdev->fmt_attr);
 }
 
-static void hdmitx_init_fmt_attr(struct hdmitx_dev *hdev)
+static __attribute__((unused)) void hdmitx_init_fmt_attr(struct hdmitx_dev *hdev)
 {
 	if (!hdev->para)
 		return;
