@@ -1389,8 +1389,7 @@ ifneq ($(dtstree),)
 ifdef CONFIG_AMLOGIC_MODIFY
 %.dtb: include/config/kernel.release scripts_dtc
 	$(if $(filter $@,$(mesondtb)),\
-	$(Q)$(MAKE) $(build)=$(dtstree) $(dtstree)/amlogic/$@,\
-	$(Q)$(MAKE) $(build)=customer/$(dtstree) customer/$(dtstree)/$@)
+	$(Q)$(MAKE) $(build)=$(dtstree) $(dtstree)/amlogic/$@)
 else
 %.dtb: include/config/kernel.release scripts_dtc
 	$(Q)$(MAKE) $(build)=$(dtstree) $(dtstree)/$@
@@ -1400,9 +1399,6 @@ PHONY += dtbs dtbs_install dtbs_check
 dtbs: include/config/kernel.release scripts_dtc
 ifdef CONFIG_AMLOGIC_MODIFY
 	$(Q)$(MAKE) $(build)=$(dtstree)/amlogic
-ifeq ($(srctree)/customer, $(wildcard $(srctree)/customer))
-	$(Q)$(MAKE) $(build)=customer/$(dtstree)
-endif
 else
 	$(Q)$(MAKE) $(build)=$(dtstree)
 endif
